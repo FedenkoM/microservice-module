@@ -1,0 +1,10 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: one-service
+logging:
+  level.com.netflix.servo: DEBUG
+eureka:
+  instance:
+    hostname: one-service

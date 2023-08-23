@@ -1,0 +1,11 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: two-service
+eureka:
+  instance:
+    hostname: two-service
+logging:
+  level:
+    com.netflix.servo: DEBUG

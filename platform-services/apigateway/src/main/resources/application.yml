@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery.locator.enabled: true
+      routes[0]:
+        id: entity
+        uri: http://gateway:8080
+        predicates[0]: Path=/entity
+      routes[1]:
+        id: properties
+        uri: http://localhost:8083
+        predicates[0]: Path=/properties
+      routes[2]:
+        id: trigger1
+        uri: http://localhost:8085
+        predicates[0]: Path=/triggerMetric
+      routes[3]:
+        id: trigger2
+        uri: http://localhost:8082
+        predicates[0]: Path=/triggerController2Metric
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
